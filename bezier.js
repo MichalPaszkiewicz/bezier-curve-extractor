@@ -53,15 +53,14 @@ $(document).ready(function() {
 	
 	var scrolling = false;
 	
-	$("#my-canvas").mousedown(function(){
+	$("#my-canvas").mousedown(function(e){
 		scrolling = true;
 		
-		action();
+		action(e, this);
 		
 		$("#my-canvas").mousemove(function(e){
 			if(scrolling){
-				var z = e;
-				action(z, this);
+				action(e, this);
 			}	
 		});
 	});
