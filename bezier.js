@@ -62,7 +62,7 @@ $(document).ready(function() {
 		
 		for(var key in curveCoords)
 		{
-			if(key.x + 5 > e.clientX && key.x - 5 < e.clientX && key.y + 5 > e.clientY && key.y - 5 < e.clientY){
+			if(curveCoords[key].x + 5 > e.clientX && curveCoords[key].x - 5 < e.clientX && curveCoords[key].y + 5 > e.clientY && curveCoords[key].y - 5 < e.clientY){
 				curveCoord = key.xn;
 			}
 		}
