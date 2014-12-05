@@ -57,8 +57,9 @@ $(document).ready(function() {
 	
 	$("#my-canvas").mousedown(function(e){
 		scrolling = true;
-		
+	
 		var curveCoord = $("input:checked").val();
+		var offset = $(thing).offset();
 		
 		for(var key in curveCoords)
 		{
