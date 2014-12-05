@@ -28,8 +28,8 @@ $(document).ready(function() {
 		ctx.arc(x,y,10,0,2*Math.PI);
 		ctx.fill();
 		
-		context.font = "bold 10px Arial";
-  		context.fillText(item.name, x - 5, y - 5);
+		ctx.font = "bold 10px Arial";
+  		ctx.fillText(item.name, x - 5, y - 5);
 	}
 	
 	function drawPoints(){
