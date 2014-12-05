@@ -59,7 +59,7 @@ $(document).ready(function() {
 		scrolling = true;
 	
 		var curveCoord = $("input:checked").val();
-		var offset = $(thing).offset();
+		var offset = $(this).offset();
 		
 		for(var key in curveCoords)
 		{
