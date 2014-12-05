@@ -4,10 +4,10 @@ $(document).ready(function() {
 	var ctx = c.getContext("2d");
 	
 	var curveCoords = {
-		start: {x: 0, y:0, name: "Start"},
-		pointOne: {x: 0, y: 0, name: "Point 1"},
-		pointTwo: {x: 0, y: 0, name: "Point 2"},
-		end: {x: 0, y: 0, name: "End"}
+		start: {x: 0, y:0, name: "Start", xn: "start"},
+		pointOne: {x: 0, y: 0, name: "Point 1", xn: "pointOne"},
+		pointTwo: {x: 0, y: 0, name: "Point 2", xn: "pointTwo"},
+		end: {x: 0, y: 0, name: "End", xn: "end"}
 	};
 	
 	function drawBezier(){
@@ -39,8 +39,7 @@ $(document).ready(function() {
 		drawPoint(curveCoords.end);
 	}
 	
-	function action(e, thing){
-		var coord = $("input:checked").val();
+	function action(e, thing, curveCoord){
 		var offset = $(thing).offset();
 		var x = e.clientX - offset.left;
 		var y = e.clientY - offset.top;
@@ -59,11 +58,22 @@ $(document).ready(function() {
 	$("#my-canvas").mousedown(function(e){
 		scrolling = true;
 		
-		action(e, this);
+		var curveCoord = $("input:checked").val();
+		
+		for(var key in curveCoords)
+		{
+			if(key.x + 5 > e.clientX && key.x - 5 < e.clientX && key.y + 5 > e.clientY && key.y - 5 < e.clientY){
+				curveCoord = key.xn;
+			}
+		}
+
+		action(e, this, curveCoord);
 		
 		$("#my-canvas").mousemove(function(e){
 			if(scrolling){
-				action(e, this);
+				curveCoord = $("input:checked").val();
+				
+				action(e, this, curveCoord);
 			}	
 		});
 	});
