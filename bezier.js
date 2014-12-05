@@ -65,6 +65,7 @@ $(document).ready(function() {
 		{
 			if(curveCoords[key].x + 5 > e.clientX - offset.left && curveCoords[key].x - 5 < e.clientX - offset.left && curveCoords[key].y + 5 > e.clientY - offset.top && curveCoords[key].y - 5 < e.clientY - offset.top){
 				curveCoord = curveCoords[key].xn;
+				$("[value=" + key + "]").click();
 			}
 		}
 
