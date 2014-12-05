@@ -44,8 +44,8 @@ $(document).ready(function() {
 		var x = e.clientX - offset.left;
 		var y = e.clientY - offset.top;
 				
-		curveCoords[coord].x = x;
-		curveCoords[coord].y = y;
+		curveCoords[curveCoord].x = x;
+		curveCoords[curveCoord].y = y;
 				
 		drawBezier();
 		drawPoints();
