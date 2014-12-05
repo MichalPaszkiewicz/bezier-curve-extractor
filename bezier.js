@@ -31,6 +31,8 @@ $(document).ready(function() {
 		curveCoords[coord].y = y;
 		
 		drawBezier();
+		
+		$("#bezier-function").text("ctx.moveTo(curveCoords.start.x, curveCoords.start.y); ctx.bezierCurveTo( <br> curveCoords.pointOne.x, curveCoords.pointOne.x, <br>  curveCoords.pointTwo.x, curveCoords.pointTwo.y, <br> curveCoords.end.x, curveCoords.end.y); <br> ctx.stroke();");
 	});
 
 });
