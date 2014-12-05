@@ -72,7 +72,6 @@ $(document).ready(function() {
 		
 		$("#my-canvas").mousemove(function(e){
 			if(scrolling){
-				curveCoord = $("input:checked").val();
 				
 				action(e, this, curveCoord);
 			}	
