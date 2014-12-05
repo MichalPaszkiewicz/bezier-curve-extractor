@@ -4,10 +4,10 @@ $(document).ready(function() {
 	var ctx = c.getContext("2d");
 	
 	var curveCoords = {
-		start: {x: 0, y:0},
-		pointOne: {x: 0, y: 0},
-		pointTwo: {x: 0, y: 0},
-		end: {x: 0, y: 0}
+		start: {x: 0, y:0, name: "Start"},
+		pointOne: {x: 0, y: 0, name: "Point 1"},
+		pointTwo: {x: 0, y: 0, name: "Point 2"},
+		end: {x: 0, y: 0, name: "End"}
 	};
 	
 	function drawBezier(){
@@ -27,6 +27,9 @@ $(document).ready(function() {
 		ctx.fillStyle = "red";
 		ctx.arc(x,y,10,0,2*Math.PI);
 		ctx.fill();
+		
+		context.font = "bold 10px Arial";
+  		context.fillText(item.name, x - 5, y - 5);
 	}
 	
 	function drawPoints(){
