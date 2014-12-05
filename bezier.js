@@ -29,7 +29,7 @@ $(document).ready(function() {
 		ctx.fill();
 		
 		ctx.font = "bold 10px Arial";
-  		ctx.fillText(item.name, x - 5, y - 5);
+  		ctx.fillText(item.name, x - 10, y - 15);
 	}
 	
 	function drawPoints(){
