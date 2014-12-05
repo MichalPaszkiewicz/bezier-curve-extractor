@@ -15,7 +15,7 @@ $(document).ready(function() {
 		ctx.beginPath();
 		ctx.moveTo(curveCoords.start.x, curveCoords.start.y);
 		ctx.bezierCurveTo(
-				curveCoords.pointOne.x, curveCoords.pointOne.x,
+				curveCoords.pointOne.x, curveCoords.pointOne.y,
 				curveCoords.pointTwo.x, curveCoords.pointTwo.y,
 				curveCoords.end.x, curveCoords.end.y);
 		ctx.stroke();
