@@ -29,6 +29,7 @@ $(document).ready(function() {
 	
 	$("#my-canvas").mouseup(function(){
 		scrolling = false;
+		$( "#my-canvas").unbind( "mousemove" );
 	});
 	
 	$("#my-canvas").mousemove(function(e){
