@@ -21,6 +21,21 @@ $(document).ready(function() {
 		ctx.stroke();
 	}
 	
+	function drawPoint(item){
+		var x = item.x, y = item.y
+		ctx.beginPath();
+		ctx.fillStyle = "red";
+		ctx.arc(x,y,10,0,2*Math.PI);
+		ctx.fill();
+	}
+	
+	function drawPoints(){
+		drawPoint(curveCoords.start);
+		drawPoint(curveCoords.pointOne);
+		drawPoint(curveCoords.pointTwo);
+		drawPoint(curveCoords.end);
+	}
+	
 	var scrolling = false;
 	
 	$("#my-canvas").mousedown(function(){
