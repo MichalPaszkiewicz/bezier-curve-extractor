@@ -40,7 +40,7 @@ $(document).ready(function() {
 	}
 	
 	function action(e, thing){
-		var coord = $("#item").val();
+		var coord = $("input:checked").val();
 		var offset = $(thing).offset();
 		var x = e.clientX - offset.left;
 		var y = e.clientY - offset.top;
