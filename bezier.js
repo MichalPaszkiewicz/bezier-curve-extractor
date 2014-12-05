@@ -11,6 +11,7 @@ $(document).ready(function() {
 	};
 	
 	function drawBezier(){
+		ctx.clearRect(0,0,c.width,c.height);
 		ctx.beginPath();
 		ctx.moveTo(curveCoords.start.x, curveCoords.start.y);
 		ctx.bezierCurveTo(
