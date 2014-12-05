@@ -23,7 +23,7 @@ $(document).ready(function() {
 	
 	var scrolling = false;
 	
-	$("#my-canvas").click(function(){
+	$("#my-canvas").mousedown(function(){
 		scrolling = true;
 		
 		$("#my-canvas").mousemove(function(e){
