@@ -60,7 +60,8 @@ $(document).ready(function() {
 		
 		$("#my-canvas").mousemove(function(e){
 			if(scrolling){
-				action(e, this);
+				var z = e;
+				action(z, this);
 			}	
 		});
 	});
