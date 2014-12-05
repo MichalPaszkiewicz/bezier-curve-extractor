@@ -12,7 +12,7 @@ $(document).ready(function() {
 	
 	function drawBezier(){
 		ctx.beginPath();
-		ctx.moveTo(curveCoords.start.x, curveCoords.start.y,);
+		ctx.moveTo(curveCoords.start.x, curveCoords.start.y);
 		ctx.bezierCurveTo(
 				curveCoords.pointOne.x, curveCoords.pointOne.x,
 				curveCoords.pointTwo.x, curveCoords.pointTwo.y,
