@@ -52,6 +52,7 @@ $(document).ready(function() {
 				curveCoords[coord].y = y;
 				
 				drawBezier();
+				drawPoints();
 				
 				$("#bezier-function").html("ctx.moveTo(" + curveCoords.start.x + ", " + curveCoords.start.y + "); <br> ctx.bezierCurveTo(  " + curveCoords.pointOne.x + ", " + curveCoords.pointOne.x + ", " + curveCoords.pointTwo.x + ", " + curveCoords.pointTwo.y + ", " + curveCoords.end.x + ", " + curveCoords.end.y + "); <br> ctx.stroke();");
 			}	
