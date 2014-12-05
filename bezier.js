@@ -36,7 +36,7 @@ $(document).ready(function() {
 		drawPoint(curveCoords.end);
 	}
 	
-	function action(){
+	function action(e){
 		var coord = $("#item").val();
 		var offset = $(this).offset();
 		var x = e.clientX - offset.left;
@@ -60,7 +60,7 @@ $(document).ready(function() {
 		
 		$("#my-canvas").mousemove(function(e){
 			if(scrolling){
-				action();
+				action(e);
 			}	
 		});
 	});
