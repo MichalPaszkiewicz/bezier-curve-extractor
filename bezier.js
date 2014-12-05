@@ -36,25 +36,31 @@ $(document).ready(function() {
 		drawPoint(curveCoords.end);
 	}
 	
+	function action(){
+		var coord = $("#item").val();
+		var offset = $(this).offset();
+		var x = e.clientX - offset.left;
+		var y = e.clientY - offset.top;
+				
+		curveCoords[coord].x = x;
+		curveCoords[coord].y = y;
+				
+		drawBezier();
+		drawPoints();
+				
+		$("#bezier-function").html("ctx.moveTo(" + curveCoords.start.x + ", " + curveCoords.start.y + "); <br> ctx.bezierCurveTo(  " + curveCoords.pointOne.x + ", " + curveCoords.pointOne.x + ", " + curveCoords.pointTwo.x + ", " + curveCoords.pointTwo.y + ", " + curveCoords.end.x + ", " + curveCoords.end.y + "); <br> ctx.stroke();");
+	}
+	
 	var scrolling = false;
 	
 	$("#my-canvas").mousedown(function(){
 		scrolling = true;
 		
+		action();
+		
 		$("#my-canvas").mousemove(function(e){
 			if(scrolling){
-				var coord = $("#item").val();
-				var offset = $(this).offset();
-				var x = e.clientX - offset.left;
-				var y = e.clientY - offset.top;
-				
-				curveCoords[coord].x = x;
-				curveCoords[coord].y = y;
-				
-				drawBezier();
-				drawPoints();
-				
-				$("#bezier-function").html("ctx.moveTo(" + curveCoords.start.x + ", " + curveCoords.start.y + "); <br> ctx.bezierCurveTo(  " + curveCoords.pointOne.x + ", " + curveCoords.pointOne.x + ", " + curveCoords.pointTwo.x + ", " + curveCoords.pointTwo.y + ", " + curveCoords.end.x + ", " + curveCoords.end.y + "); <br> ctx.stroke();");
+				action();
 			}	
 		});
 	});
