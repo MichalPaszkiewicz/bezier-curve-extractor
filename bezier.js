@@ -4,10 +4,10 @@ $(document).ready(function() {
 	var ctx = c.getContext("2d");
 	
 	var curveCoords = {
-		start: {x: 60, y: 100, name: "Start", xn: "start"},
-		pointOne: {x: 120, y: 20, name: "Point 1", xn: "pointOne"},
-		pointTwo: {x: 180, y: 20, name: "Point 2", xn: "pointTwo"},
-		end: {x: 240, y: 100, name: "End", xn: "end"}
+		start: {x: 160, y: 200, name: "Start", xn: "start"},
+		pointOne: {x: 220, y: 120, name: "Point 1", xn: "pointOne"},
+		pointTwo: {x: 280, y: 120, name: "Point 2", xn: "pointTwo"},
+		end: {x: 340, y: 200, name: "End", xn: "end"}
 	};
 	
 	function drawBezier(){
