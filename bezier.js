@@ -39,8 +39,13 @@ $(document).ready(function() {
 		drawPoint(curveCoords.end);
 	}
 	
+	function writeCode(){
+		$("#bezier-function").html("ctx.moveTo(" + curveCoords.start.x + ", " + curveCoords.start.y + "); <br> ctx.bezierCurveTo(  " + curveCoords.pointOne.x + ", " + curveCoords.pointOne.y + ", " + curveCoords.pointTwo.x + ", " + curveCoords.pointTwo.y + ", " + curveCoords.end.x + ", " + curveCoords.end.y + "); <br> ctx.stroke();");
+	}
+	
 	drawBezier();
 	drawPoints();
+	writeCode();
 	
 	function action(e, thing, curveCoord){
 		var offset = $(thing).offset();
@@ -52,8 +57,7 @@ $(document).ready(function() {
 				
 		drawBezier();
 		drawPoints();
-				
-		$("#bezier-function").html("ctx.moveTo(" + curveCoords.start.x + ", " + curveCoords.start.y + "); <br> ctx.bezierCurveTo(  " + curveCoords.pointOne.x + ", " + curveCoords.pointOne.y + ", " + curveCoords.pointTwo.x + ", " + curveCoords.pointTwo.y + ", " + curveCoords.end.x + ", " + curveCoords.end.y + "); <br> ctx.stroke();");
+		writeCode();		
 	}
 	
 	var scrolling = false;
