@@ -1,6 +1,7 @@
 html, body{
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 
 .main-container{
@@ -11,4 +12,9 @@ html, body{
 
 canvas{
 	border: 1px solid black;
+}
+
+#bezier-function{
+	text-align: left;
+	margin: 50px;
 }
