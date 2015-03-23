@@ -65,11 +65,11 @@ $(document).ready(function() {
 	$("#my-canvas").mousedown(function(e){
 		scrolling = true;
 		
-		var x = e.clientX - offset.left;
-		var y = e.clientY - offset.top + window.scrollY;
-	
 		var curveCoord = $("input:checked").val();
 		var offset = $(this).offset();
+		
+		var x = e.clientX - offset.left;
+		var y = e.clientY - offset.top + window.scrollY;
 		
 		for(var key in curveCoords)
 		{
