@@ -50,7 +50,7 @@ $(document).ready(function() {
 	function action(e, thing, curveCoord){
 		var offset = $(thing).offset();
 		var x = e.clientX - offset.left;
-		var y = e.clientY - offset.top;
+		var y = e.clientY - offset.top + window.scrollY;
 				
 		curveCoords[curveCoord].x = x;
 		curveCoords[curveCoord].y = y;
@@ -64,13 +64,16 @@ $(document).ready(function() {
 	
 	$("#my-canvas").mousedown(function(e){
 		scrolling = true;
+		
+		var x = e.clientX - offset.left;
+		var y = e.clientY - offset.top + window.scrollY;
 	
 		var curveCoord = $("input:checked").val();
 		var offset = $(this).offset();
 		
 		for(var key in curveCoords)
 		{
-			if(curveCoords[key].x + 10 > e.clientX - offset.left && curveCoords[key].x - 10 < e.clientX - offset.left && curveCoords[key].y + 10 > e.clientY - offset.top && curveCoords[key].y - 10 < e.clientY - offset.top){
+			if(curveCoords[key].x + 10 > x && curveCoords[key].x - 10 < x && curveCoords[key].y + 10 > y && curveCoords[key].y - 10 < y){
 				curveCoord = curveCoords[key].xn;
 				$("[value=" + key + "]").click();
 			}
